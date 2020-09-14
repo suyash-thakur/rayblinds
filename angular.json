@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+
             ],
             "scripts": []
           },
@@ -123,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "rayblinds"
+    }
+  },
+  "defaultProject": "rayblinds",
+  "cli": {
+    "analytics": "db4516e4-efa8-4c5a-9464-13db83ef3f79"
+  }
 }
