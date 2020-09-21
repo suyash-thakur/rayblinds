@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import appRoutes from './routerConfig';
 import { ProductCatalogueComponent } from './product-catalogue/product-catalogue.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ProductCatalogueComponent
+    ProductCatalogueComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
