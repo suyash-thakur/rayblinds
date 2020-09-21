@@ -1,11 +1,11 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-product-catalogue',
+  templateUrl: './product-catalogue.component.html',
+  styleUrls: ['./product-catalogue.component.scss']
 })
-export class HomeComponent implements OnInit, AfterViewInit{
+export class ProductCatalogueComponent implements OnInit, AfterViewInit {
 
   constructor() { }
 
@@ -24,6 +24,6 @@ export class HomeComponent implements OnInit, AfterViewInit{
     });
 
 
-
   }
+
 }
