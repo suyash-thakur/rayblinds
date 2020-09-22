@@ -1,0 +1,14 @@
+.centerButton {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .details {
+    margin-top: 50px !important;
+  }
+  .rightButton {
+    display: none;
+  }
+  .centerButton {
+    display: inline !important;
+  }
+}
