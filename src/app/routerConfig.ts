@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { GalleryComponent } from './gallery/gallery.component';
 import { HomeComponent } from './home/home.component';
 import { ProductCatalogueComponent } from './product-catalogue/product-catalogue.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
@@ -12,6 +13,9 @@ const appRoutes: Routes = [
   },
   {
     path: 'productDetails', component: ProductDetailsComponent
+  },
+  {
+    path: 'gallery', component: GalleryComponent
   }
 ];
 
