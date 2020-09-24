@@ -8,13 +8,15 @@ import appRoutes from './routerConfig';
 import { ProductCatalogueComponent } from './product-catalogue/product-catalogue.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { EstimateComponent } from './estimate/estimate.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProductCatalogueComponent,
     ProductDetailsComponent,
-    GalleryComponent
+    GalleryComponent,
+    EstimateComponent
   ],
   imports: [
     BrowserModule,
