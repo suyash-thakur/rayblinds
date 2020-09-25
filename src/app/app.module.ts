@@ -9,6 +9,7 @@ import { ProductCatalogueComponent } from './product-catalogue/product-catalogue
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { EstimateComponent } from './estimate/estimate.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { EstimateComponent } from './estimate/estimate.component';
     ProductCatalogueComponent,
     ProductDetailsComponent,
     GalleryComponent,
-    EstimateComponent
+    EstimateComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
