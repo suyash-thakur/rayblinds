@@ -25,7 +25,8 @@
 				margin-left: 340px;
 			}
 			@media (max-width: 575px) {
-				bottom: 60px;
+        bottom: 20px;
+        visibility: hidden;
 			}
 
 			&:after {
