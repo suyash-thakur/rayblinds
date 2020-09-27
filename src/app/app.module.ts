@@ -10,6 +10,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { GalleryComponent } from './gallery/gallery.component';
 import { EstimateComponent } from './estimate/estimate.component';
 import { FooterComponent } from './footer/footer.component';
+import { AutomaticComponent } from './automatic/automatic.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { FooterComponent } from './footer/footer.component';
     ProductDetailsComponent,
     GalleryComponent,
     EstimateComponent,
-    FooterComponent
+    FooterComponent,
+    AutomaticComponent
   ],
   imports: [
     BrowserModule,

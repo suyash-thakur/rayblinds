@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import {Location} from '@angular/common';
 import * as $ from 'jquery';
 
 @Component({
@@ -23,7 +23,7 @@ export class GalleryComponent implements OnInit, AfterViewInit{
   selectedProduct: any = {
     id: '', name: '', img: ['']
   };
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private location: Location) {
     const id = this.route.snapshot.paramMap.get('id');
     this. selectedProduct = this.products.find(obj => {
       return obj.id === id;
@@ -46,5 +46,8 @@ export class GalleryComponent implements OnInit, AfterViewInit{
 
 
 
+  }
+  back() {
+    this.location.back();
   }
 }

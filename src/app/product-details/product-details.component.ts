@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as $ from 'jquery';
+
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.scss']
 })
-export class ProductDetailsComponent implements OnInit {
+export class ProductDetailsComponent implements OnInit, AfterViewInit {
   products: Array<any> = [
     {id: 'VerticalBlind', name: 'Vertical Blind', content: 'Vertical Blinds are the best choice for your ultramodern sliding glass doors, floor-to-ceiling glass walls, and large windows. Drape them with our sleek vertical blinds and turn them into the center of attraction. We offer well over 60 fabric and 20 PVC options for you to choose from.', img : '../../assets/img/457/Vertical blinds.png'},
     {id: 'FauxWoodBlinds' , name: 'Faux Wood Blinds', content: 'We offer the widest range of sophisticated, kid-friendly, and easy-to-clean faux wood blinds. Bring home high-end cordless moisture-resistant blinds, recommended especially for your bathroom and kitchen windows. If you seek the rich look of real wood at a small price tag, Ray’s Faux Wood Blinds are here offering premium durability and privacy for your home. Great quality, smooth finishing, and a classic appeal – at an affordable, budget-friendly rate!', img: '../../assets/img/457/Faux Wood.png'},
@@ -28,6 +30,18 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+  ngAfterViewInit() {
+    var dropToggle = $('.menu_right > li').has('ul').children('a');
+    dropToggle.on('click', function() {
+      dropToggle.not(this).closest('li').find('ul').slideUp(200);
+      $(this).closest('li').children('ul').slideToggle(200);
+      return false;
+    });
+
+    $( ".toggle_icon" ).on('click', function() {
+      $( 'body' ).toggleClass( "open" );
+    });
   }
   changeRoute( ) {
     this.router.navigate(['gallery/' + this.selectedProduct.id]);

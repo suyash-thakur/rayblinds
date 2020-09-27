@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AutomaticComponent } from './automatic/automatic.component';
 import { EstimateComponent } from './estimate/estimate.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { HomeComponent } from './home/home.component';
@@ -20,6 +21,9 @@ const appRoutes: Routes = [
   },
   {
     path: 'estimate', component: EstimateComponent
+  },
+  {
+    path: 'automation', component: AutomaticComponent
   }
 ];
 
