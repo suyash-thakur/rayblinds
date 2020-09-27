@@ -13,10 +13,10 @@ const appRoutes: Routes = [
     path: 'products', component: ProductCatalogueComponent
   },
   {
-    path: 'productDetails', component: ProductDetailsComponent
+    path: 'productDetails/:id', component: ProductDetailsComponent
   },
   {
-    path: 'gallery', component: GalleryComponent
+    path: 'gallery/:id', component: GalleryComponent
   },
   {
     path: 'estimate', component: EstimateComponent
