@@ -18,6 +18,7 @@ export class EstimateComponent implements OnInit, AfterViewInit {
   constructor() { }
 
   ngOnInit(): void {
+    $( 'body' ).removeClass('open');
   }
   ngAfterViewInit() {
     var dropToggle = $('.menu_right > li').has('ul').children('a');

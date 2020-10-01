@@ -31,6 +31,7 @@ export class GalleryComponent implements OnInit, AfterViewInit{
   }
 
   ngOnInit(): void {
+    $( 'body' ).removeClass('open');
   }
   ngAfterViewInit() {
     var dropToggle = $('.menu_right > li').has('ul').children('a');

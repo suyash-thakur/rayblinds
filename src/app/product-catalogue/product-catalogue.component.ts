@@ -23,6 +23,8 @@ export class ProductCatalogueComponent implements OnInit, AfterViewInit {
   constructor(public router: Router) { }
 
   ngOnInit(): void {
+    $( 'body' ).removeClass('open');
+
   }
   ngAfterViewInit() {
     var dropToggle = $('.menu_right > li').has('ul').children('a');

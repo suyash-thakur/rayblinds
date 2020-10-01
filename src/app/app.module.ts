@@ -11,6 +11,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { EstimateComponent } from './estimate/estimate.component';
 import { FooterComponent } from './footer/footer.component';
 import { AutomaticComponent } from './automatic/automatic.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { AutomaticComponent } from './automatic/automatic.component';
     BrowserModule,
     AppRoutingModule,
     RouterModule,
+    CarouselModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

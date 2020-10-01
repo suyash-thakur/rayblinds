@@ -1,15 +1,17 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit{
-
+  owlCarousel: any;
   constructor() { }
 
   ngOnInit(): void {
+    $( 'body' ).removeClass('open');
   }
   ngAfterViewInit() {
     var dropToggle = $('.menu_right > li').has('ul').children('a');
@@ -24,6 +26,6 @@ export class HomeComponent implements OnInit, AfterViewInit{
     });
 
 
-
   }
 }
+
