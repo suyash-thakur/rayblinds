@@ -37,7 +37,7 @@
     <h2 class="section-intro__subtitle" style="color: white !important;">Cost Estimate</h2>
     <div class="btn-group breadcrumb">
       <a  routerLink="/" class="btn">Home</a>
-      <span class="btn btn--rightBorder">Estimate</span>
+      <span class="btn ">Estimate</span>
     </div>
   </div>
 </header>
@@ -114,7 +114,7 @@
       <td>
         <select class="tableInput">
           <option disabled selected>Select </option>
-          <option value="bind 1"> Blind 1</option>
+          <option *ngFor="let item of products" [value] = 'item.name'> {{ item.name }}</option>
         </select>
       </td>
     </tr>

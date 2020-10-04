@@ -17,8 +17,11 @@
   max-width: 600px !important;
 }
 @media screen and (max-width: 740px) {
- .section-intro__subtitle {
+ .section-intro__subtitle.small {
    text-align: center;
+ }
+ .section-intro__subtitle {
+   font-size: 32px;
  }
  .description  {
    text-align: center;
@@ -38,6 +41,9 @@
  }
  .car-item {
    display: none;
+ }
+ .test-img {
+   width: 55px;
  }
 }
 

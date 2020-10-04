@@ -73,30 +73,30 @@
 
 	// dark btn
 	&-dark {
-		background: $charade;
-		border-color: $charade;
-		color: $primary-color;
+		background: $primary-color;
+		border-color: $primary-color;
+		color: $white;
 		padding: .7rem 1.4rem;
 
 		&.btn--rightBorder:after {
-			background: $charade;
+			background: $primary-color;
 		}
 
 		&.btn--leftBorder:before {
-			background: $charade;
+			background: $primary-color;
 		}
 
 		&:hover {
-			background: $charade;
+			background: $white;
 			color: $primary-color;
-			border-color: $charade;
+			border-color: $white;
 
 			&.btn--rightBorder:after {
-				background: $charade;
+				background: $white;
 			}
 
 			&.btn--rightBorder:before {
-				background: $charade;
+				background: $white;
 			}
 		}
 	}
