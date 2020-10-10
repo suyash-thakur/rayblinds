@@ -30,7 +30,7 @@
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	z-index: 10;
+	z-index: 10000;
 	width: 100%;
 	padding-top: 30px;
 	padding-bottom: 30px;
@@ -118,7 +118,7 @@
 	max-width: 29%;
 	text-align: center;
 	padding-left: 20px;
-	z-index: 2;
+	z-index: 16;
 	padding-right: 20px;
 	@include transition();
 	opacity: .95;
