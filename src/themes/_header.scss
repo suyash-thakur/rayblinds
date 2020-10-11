@@ -11,12 +11,16 @@
 				background: transparent !important;
 				&:before {
 					@include transform(rotate(45deg));
-					top: 0px;
+          top: 0px;
+          background: $white;
+
 					@include transition(all 0.5s ease-in-out);
 				}
 				&:after {
 					width: 30px;
-					@include transform(rotate(-45deg));
+          @include transform(rotate(-45deg));
+          background: $white;
+
 					bottom: 0px;
 					@include transition(all 0.5s ease-in-out);
 				}
