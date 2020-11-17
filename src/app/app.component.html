@@ -2,3 +2,6 @@
 <router-outlet></router-outlet>
 <app-footer></app-footer>
 </div>
+<a routerLink="/estimate" class="float" *ngIf="this.router.url !== '/estimate'">
+  Get Estimate
+  </a>

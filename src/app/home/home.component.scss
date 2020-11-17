@@ -16,6 +16,9 @@
 .portfolio__img {
   max-width: 600px !important;
 }
+.mobImg {
+  display: none;
+}
 @media screen and (max-width: 740px) {
  .section-intro__subtitle.small {
    text-align: center;
@@ -45,5 +48,11 @@
  .test-img {
    width: 55px;
  }
+ .mobImg {
+  display: block;
+}
+.deskImg {
+  display: none;
+}
 }
 

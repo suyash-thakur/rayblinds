@@ -1,4 +1,5 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { Router } from '@angular/router';
 import * as $ from 'jquery';
 @Component({
   selector: 'app-root',
@@ -7,6 +8,7 @@ import * as $ from 'jquery';
 })
 export class AppComponent implements AfterViewInit{
   title = 'rayblinds';
+  constructor(public router: Router) {}
   ngAfterViewInit() {
     var dropToggle = $('.menu_right > li').has('ul').children('a');
     dropToggle.on('click', function() {

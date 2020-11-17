@@ -1,0 +1,27 @@
+.float{
+	position:fixed;
+	width:150px;
+	height:40px;
+	bottom:40px;
+  right:40px;
+  padding-top: 10px;
+	background-color:#f94741;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
+}
+@media screen and (max-width: 740px) {
+  .float{
+    right:10px;
+    width:120px;
+    font-size: 15px;
+    bottom:20px;
+
+
+  }
+}
