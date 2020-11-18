@@ -2,6 +2,6 @@
 <router-outlet></router-outlet>
 <app-footer></app-footer>
 </div>
-<a routerLink="/estimate" class="float" *ngIf="this.router.url !== '/estimate'">
+<a routerLink="/estimate" class="float" *ngIf="this.router.url !== '/estimate' && this.router.url !== '/consultation'">
   Get Estimate
   </a>

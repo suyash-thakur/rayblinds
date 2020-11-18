@@ -12,6 +12,7 @@ import { EstimateComponent } from './estimate/estimate.component';
 import { FooterComponent } from './footer/footer.component';
 import { AutomaticComponent } from './automatic/automatic.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ConsultationComponent } from './consultation/consultation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     GalleryComponent,
     EstimateComponent,
     FooterComponent,
-    AutomaticComponent
+    AutomaticComponent,
+    ConsultationComponent
   ],
   imports: [
     BrowserModule,
