@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AutomaticComponent } from './automatic/automatic.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ConsultationComponent } from './consultation/consultation.component';
+import { QuizComponent } from './quiz/quiz.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { ConsultationComponent } from './consultation/consultation.component';
     EstimateComponent,
     FooterComponent,
     AutomaticComponent,
-    ConsultationComponent
+    ConsultationComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,

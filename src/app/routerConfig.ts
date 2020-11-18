@@ -6,6 +6,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { HomeComponent } from './home/home.component';
 import { ProductCatalogueComponent } from './product-catalogue/product-catalogue.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { QuizComponent } from './quiz/quiz.component';
 
 const appRoutes: Routes = [
   {
@@ -28,6 +29,9 @@ const appRoutes: Routes = [
   },
   {
     path: 'consultation', component: ConsultationComponent
+  },
+  {
+    path: 'quiz', component: QuizComponent
   }
 ];
 

@@ -1,0 +1,92 @@
+
+<div class="side_menu">
+  <ul class="list menu_right">
+    <li>
+      <a routerLink="/">Home</a>
+    </li>
+    <li>
+      <a routerLink="/products">Products</a>
+    </li>
+    <li>
+      <a routerLink="/estimate">Estimate</a>
+    </li>
+    <li>
+      <a routerLink="/automation">Automation</a>
+    </li>
+
+  </ul>
+</div>
+<!--================End Offcanvus Menu Area =================-->
+
+<!--================Canvus Menu Area =================-->
+<div class="canvus_menu">
+<div class="container">
+  <div class="float-right">
+    <div class="toggle_icon" title="Menu Bar">
+      <span></span>
+    </div>
+  </div>
+</div>
+</div>
+<header class="hero-banner project-bg">
+  <a class="navbar-brand" routerLink="/" style="z-index: 500000 !important;">
+    <img src="../../assets/img/logo.png" alt="">
+  </a>
+
+  <div class="container">
+    <h2 class="section-intro__subtitle" style="color: white !important;">Quiz</h2>
+    <div class="btn-group breadcrumb">
+      <a  routerLink="/" class="btn">Home</a>
+      <span class="btn ">Quiz</span>
+    </div>
+  </div>
+</header>
+<section class="portfolio section-margin">
+  <div class="container">
+    <div class="section-intro">
+      <h4 class="section-intro__title"><b>Quiz</b></h4>
+      <h2 class="section-intro__subtitle bottom-border">Get the recommendation</h2>
+    </div>
+    <div class="card" [style.background-color]="showRecommendation ? '#ECECEC': '#fff'">
+      <div class="card-body">
+    <div style="text-align:center;">
+      <div *ngIf="!isBegin && !showRecommendation">
+      <h2 class="instruction">Answer the following question to know the best blinds that suits you</h2>
+      <br>
+      <br>
+      <br>
+      <button class="btn btn--rightBorder btn--leftBorder" (click)="begin()">Begin</button>
+    </div>
+    <div *ngIf="isBegin && !showRecommendation">
+      <h2 class="instruction">{{ questions[counter].question }}</h2>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <div>
+          <button class="option" (click)="this.optionClicked(counter, 0)">
+            {{questions[counter].option1}}
+          </button>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <div>
+          <button class="option" (click)="this.optionClicked(counter, 1)">
+            {{questions[counter].option2}}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="showRecommendation" style="text-align:left">
+      <div *ngFor="let item of recommendation">
+        <div style="display: flex;">
+          <div class="portfolio__img">
+            <img [src]= "item.img" class="img-fluid">
+          </div>
+          <div>
+            {{item.name}}
+          </div>
+        </div>
+        <hr>
+      </div>
+    </div>
+    </div>
+  </div>
+    </div>
+    </div>
