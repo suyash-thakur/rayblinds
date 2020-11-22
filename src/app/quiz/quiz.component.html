@@ -13,7 +13,9 @@
     <li>
       <a routerLink="/automation">Automation</a>
     </li>
-
+    <li>
+      <a routerLink="/quiz">Get Recommendation</a>
+    </li>
   </ul>
 </div>
 <!--================End Offcanvus Menu Area =================-->
@@ -41,7 +43,7 @@
     </div>
   </div>
 </header>
-<section class="portfolio section-margin">
+<section class="portfolio section-margin" style="margin-bottom: 0px !important;">
   <div class="container">
     <div class="section-intro">
       <h4 class="section-intro__title"><b>Quiz</b></h4>
@@ -74,13 +76,27 @@
       </div>
     </div>
     <div *ngIf="showRecommendation" style="text-align:left">
-      <div *ngFor="let item of recommendation">
-        <div style="display: flex;">
-          <div class="portfolio__img">
-            <img [src]= "item.img" class="img-fluid">
+      <div *ngFor="let item of recommendation; let i = index">
+        <div class="row">
+          <div class="portfolio__img col-md-3 parent">
+            <div style="display: flex; justify-content: center;">
+              <div style="font-size: 15px; ">
+                <b>
+                {{ i + 1 }}
+              </b>
+              </div>
+              <div>
+                <img [src]= "item.img" class="img-fluid" style="max-width: 200px;">
+              </div>
+            </div>
           </div>
-          <div>
-            {{item.name}}
+          <div class="col-md-9 parent">
+            <h1 class="blindHeading">
+             <b> {{item.name}}</b>
+            </h1>
+            <p>
+              {{ item.content }}
+            </p>
           </div>
         </div>
         <hr>
@@ -89,4 +105,22 @@
     </div>
   </div>
     </div>
+
     </div>
+    <br>
+    <br>
+    <br>
+    <section class="tips tips-bg" *ngIf="showRecommendation" style="margin-bottom: 0px !important;">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7 mb-4 mb-lg-0">
+            <h2 class="section-intro__subtitle">Request free In-Home or Virtual consultation</h2>
+            <p>Provide your contact information and we will be in touch via phone, email or text to schedule your free consultation</p>
+          </div>
+
+          <div class="col-lg-5 text-center text-lg-right">
+            <a class="btn btn-dark btn--leftBorder btn--rightBorder" routerLink="/consultation">Request</a>
+          </div>
+        </div>
+      </div>
+    </section>

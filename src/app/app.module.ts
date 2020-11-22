@@ -14,6 +14,7 @@ import { AutomaticComponent } from './automatic/automatic.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ConsultationComponent } from './consultation/consultation.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { SmartBlindsComponent } from './smart-blinds/smart-blinds.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { QuizComponent } from './quiz/quiz.component';
     FooterComponent,
     AutomaticComponent,
     ConsultationComponent,
-    QuizComponent
+    QuizComponent,
+    SmartBlindsComponent
   ],
   imports: [
     BrowserModule,

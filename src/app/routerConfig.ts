@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { ProductCatalogueComponent } from './product-catalogue/product-catalogue.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { SmartBlindsComponent } from './smart-blinds/smart-blinds.component';
 
 const appRoutes: Routes = [
   {
@@ -32,6 +33,9 @@ const appRoutes: Routes = [
   },
   {
     path: 'quiz', component: QuizComponent
+  },
+  {
+    path: 'smartBlinds', component: SmartBlindsComponent
   }
 ];
 

@@ -12,3 +12,19 @@
   background-color: #f94741;
 
 }
+.blindHeading {
+  font-size: 20px;
+
+}
+b {
+  color: #262533 !important;
+  opacity: 0.8;
+}
+.parent {
+  text-align: left;
+}
+@media screen and (max-width: 740px) {
+  .parent {
+    text-align: center;
+  }
+}
