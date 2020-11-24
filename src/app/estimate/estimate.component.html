@@ -114,40 +114,61 @@
     <tr *ngFor="let item of estimateData">
       <td><input type="string" class="tableInput"></td>
       <td><input type="string" class="tableInput"></td>
-      <td><select class="tableInput">
-        <option value="1/8">
-          1/8
-        </option>
-        <option value="1/4">
-          1/4
-        </option>
-        <option value="3/8">
-          3/8
-        </option>
-        <option value="1/2">
-          1/2
-        </option>
-        <option value="5/8">
-          5/8
-        </option>
-      </select></td>
-      <td><select class="tableInput">
-        <option value="1/8">
-          1/8
-        </option>
-        <option value="1/4">
-          1/4
-        </option>
-        <option value="3/8">
-          3/8
-        </option>
-        <option value="1/2">
-          1/2
-        </option>
-        <option value="5/8">
-          5/8
-        </option>
-      </select></td>
+      <td>
+        <div style="display: flex;">
+          <div>
+            <input type="number" class="tableInput">
+          </div>
+          <div>
+          <select style="padding: 5px; margin-top: 10px;  font-size: 20px; border: 3px solid #4F4E56; padding-bottom: 10px;        ">
+            <option value="0" selected>
+              NA
+            </option>
+            <option value="1/8">
+              1/8
+            </option>
+            <option value="1/4">
+              1/4
+            </option>
+            <option value="3/8">
+              3/8
+            </option>
+            <option value="1/2">
+              1/2
+            </option>
+            <option value="5/8">
+              5/8
+            </option>
+          </select>
+        </div>
+        </div></td>
+      <td> <div style="display: flex;">
+        <div>
+          <input type="number" class="tableInput">
+        </div>
+        <div>
+        <select class="" style="padding: 5px; margin-top: 10px;  font-size: 20px; border: 3px solid #4F4E56; padding-bottom: 10px;        ">
+          <option value="0" selected>
+            NA
+          </option>
+          <option value="1/8">
+            1/8
+          </option>
+          <option value="1/4">
+            1/4
+          </option>
+          <option value="3/8">
+            3/8
+          </option>
+          <option value="1/2">
+            1/2
+          </option>
+          <option value="5/8">
+            5/8
+          </option>
+        </select>
+      </div>
+      </div></td>
       <td>
         <select class="tableInput">
           <option disabled selected>Select </option>
