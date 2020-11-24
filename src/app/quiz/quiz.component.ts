@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import * as $ from 'jquery';
 
 @Component({
@@ -32,7 +33,7 @@ export class QuizComponent implements OnInit {
 
   }
 ];
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
     $( 'body' ).removeClass('open');
@@ -96,5 +97,8 @@ export class QuizComponent implements OnInit {
     $( ".toggle_icon" ).on('click', function() {
       $( 'body' ).toggleClass( "open" );
     });
+  }
+  routerButton(id) {
+    this.router.navigate(['/productDetails/' + id]);
   }
 }
