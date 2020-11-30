@@ -64,19 +64,16 @@
     </div>
     <div *ngIf="isBegin && !showRecommendation">
       <h2 class="instruction">{{ questions[counter].question }}</h2>
-      <div style="display: flex; justify-content: center; align-items: center;">
-        <div>
-          <button class="option" (click)="this.optionClicked(counter, 0)">
-            {{questions[counter].option1}}
-          </button>
-        </div>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <div>
-          <button class="option" (click)="this.optionClicked(counter, 1)">
-            {{questions[counter].option2}}
-          </button>
-        </div>
+      <div style=" margin-right: auto; margin-left: auto; width:fit-content">
+      <div *ngFor="let item of questions[counter].options; let i = index;" style="text-align: left; padding-left: 30px;">
+        <input type="checkbox" value="{{ questions[counter].options[i].name }}" name="{{ questions[counter].options[i].name }}"  (change)="onOptionSelect($event, i)" >
+        <label for="{{  questions[counter].options[i].name }}" style="font-size: 18px; ">&nbsp; {{ questions[counter].options[i].name }}</label>
       </div>
+      <button class="buttonRed" (click)="optionClicked()" *ngIf="counter !== questions.length - 1">Next</button>
+      <button class="buttonRed"  (click)="submitQuiz()" *ngIf="counter === questions.length - 1">
+        Submit
+      </button>
+    </div>
     </div>
     <div *ngIf="showRecommendation" style="text-align:left">
       <div *ngFor="let item of recommendation; let i = index">
@@ -100,14 +97,45 @@
             <p>
               {{ item.content }}
             </p>
-            <button class="buttonRed"  (click)="routerButton(item.id)">
+            <button class="buttonRed"  (click)="routerButton(item.id)" >
               Know More
             </button>
+
           </div>
         </div>
         <hr>
       </div>
     </div>
+    </div>
+  </div>
+  <div *ngIf="showRecommendation" style="text-align:left">
+    <div *ngFor="let item of blinds.slice(0, 3); let i = index">
+      <div class="row">
+        <div class="portfolio__img col-md-3 parent">
+          <div style="display: flex; justify-content: center;">
+            <div style="font-size: 15px; ">
+              <b>
+              {{ i + 1 }}
+            </b>
+            </div>
+            <div>
+              <img [src]= "item.img" class="img-fluid" style="max-width: 200px;">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9 parent">
+          <h1 class="blindHeading">
+           <b> {{item.name}}</b>
+          </h1>
+          <p>
+            {{ item.content }}
+          </p>
+          <button class="buttonRed"  (click)="routerButton(item.id)">
+            Know More
+          </button>
+        </div>
+      </div>
+      <hr>
     </div>
   </div>
     </div>

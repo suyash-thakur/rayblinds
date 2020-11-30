@@ -130,6 +130,9 @@
             <option value="1/4">
               1/4
             </option>
+            <option value="3/4">
+              3/4
+            </option>
             <option value="3/8">
               3/8
             </option>
@@ -138,6 +141,9 @@
             </option>
             <option value="5/8">
               5/8
+            </option>
+            <option value="7/8">
+              7/8
             </option>
           </select>
         </div>
@@ -157,8 +163,14 @@
           <option value="1/4">
             1/4
           </option>
+          <option value="3/4">
+            3/4
+          </option>
           <option value="3/8">
             3/8
+          </option>
+          <option value="7/8">
+            7/8
           </option>
           <option value="1/2">
             1/2
@@ -171,7 +183,6 @@
       </div></td>
       <td>
         <select class="tableInput">
-          <option disabled selected>Select </option>
           <option *ngFor="let item of products" [value] = 'item.name'> {{ item.name }}</option>
         </select>
       </td>
