@@ -59,7 +59,7 @@
     <div class="row align-items-end pb-md-5 mb-4" style="justify-content: space-between !important; ">
       <div class="col-md-5 mb-4 mb-md-0" *ngFor="let item of products" style="margin-top: 50px !important;">
         <div class="portfolio__img" >
-          <img class="img-fluid" [src]='item.img' alt="" style="width: 100%;">
+          <img class="img-fluid" [src]='item.img' alt="" style="width: 100%; cursor: pointer;" (click)='changeRoute(item.id)' >
         </div>
         <div class="text-center pt-2">
           <p style="font-size: 25px; margin-bottom: 0px; color: #4F4E56">{{ item.name }}</p>

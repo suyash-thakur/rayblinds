@@ -195,24 +195,35 @@ export class QuizComponent implements OnInit {
         let isMotorized: boolean;
         if (i === 2 || i === 3) {
           isMotorized = true;
-
+          if (event.target.checked){
+            for (let j = 0; j < this.blinds.length; j++) {
+              if (this.blinds[j].moterize === isMotorized) {
+                this.blinds[j].count = this.blinds[j].count + 1;
+              }
+            }
+          } else {
+            for (let j = 0; j < this.blinds.length; j++) {
+              if (this.blinds[j].moterize === isMotorized) {
+                this.blinds[j].count = this.blinds[j].count - 1;
+              }
+            }
+          }
 
     }   else {
           isMotorized = false;
+          if (event.target.checked){
+            for (let j = 0; j < this.blinds.length; j++) {
+
+                this.blinds[j].count = this.blinds[j].count + 1;
+
+            }
+          } else {
+            for (let j = 0; j < this.blinds.length; j++) {
+                this.blinds[j].count = this.blinds[j].count - 1;
+            }
+          }
     }
-        if (event.target.checked){
-      for (let j = 0; j < this.blinds.length; j++) {
-        if (this.blinds[j].moterize === isMotorized) {
-          this.blinds[j].count = this.blinds[j].count + 1;
-        }
-      }
-    } else {
-      for (let j = 0; j < this.blinds.length; j++) {
-        if (this.blinds[j].moterize === isMotorized) {
-          this.blinds[j].count = this.blinds[j].count - 1;
-        }
-      }
-    }
+
         break;
     case 2:
       if(event.target.checked) {
@@ -296,6 +307,7 @@ export class QuizComponent implements OnInit {
     submitQuiz() {
 
       this.blinds.sort((a, b) => a.count >= b.count ? - 1 : 0 );
+      console.log(this.blinds);
       this.showRecommendation = true;
 
     }
