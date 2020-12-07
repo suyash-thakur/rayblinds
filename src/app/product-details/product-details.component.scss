@@ -1,6 +1,10 @@
 .centerButton {
   display: none;
 }
+.mobile-image {
+  display: none;
+}
+
 @media screen and (max-width: 600px) {
   .details {
     margin-top: 50px !important;
@@ -10,5 +14,11 @@
   }
   .centerButton {
     display: inline !important;
+  }
+  .mobile-image {
+    display: block;
+  }
+  .pc-image {
+    display: none;
   }
 }
