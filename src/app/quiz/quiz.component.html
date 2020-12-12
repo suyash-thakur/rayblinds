@@ -17,7 +17,7 @@
       <a routerLink="/smartBlinds">Smart Blinds</a>
     </li>
     <li>
-      <a routerLink="/quiz">Recommendation</a>
+      <a routerLink="/quiz">Product Recommendation</a>
     </li>
   </ul>
 </div>
@@ -50,13 +50,13 @@
   <div class="container">
     <div class="section-intro">
       <h4 class="section-intro__title"><b>Quiz</b></h4>
-      <h2 class="section-intro__subtitle bottom-border">Get the recommendation</h2>
+      <h2 class="section-intro__subtitle bottom-border">Product Recommendation</h2>
     </div>
     <div class="card" [style.background-color]="showRecommendation ? '#ECECEC': '#fff'">
       <div class="card-body">
     <div style="text-align:center;">
       <div *ngIf="!isBegin && !showRecommendation">
-      <h2 class="instruction">Answer the following question to know the best blinds that suits you</h2>
+      <h2 class="instruction"> Answer following questions to discover blinds that best suit your needs</h2>
       <br>
       <br>
       <br>

@@ -15,6 +15,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ConsultationComponent } from './consultation/consultation.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { SmartBlindsComponent } from './smart-blinds/smart-blinds.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +36,8 @@ import { SmartBlindsComponent } from './smart-blinds/smart-blinds.component';
     AppRoutingModule,
     RouterModule,
     CarouselModule,
+    HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

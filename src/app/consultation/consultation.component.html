@@ -16,7 +16,7 @@
       <a routerLink="/smartBlinds">Smart Blinds</a>
     </li>
     <li>
-      <a routerLink="/quiz">Recommendation</a>
+      <a routerLink="/quiz">Product Recommendation</a>
     </li>
   </ul>
 </div>
@@ -46,41 +46,44 @@
   </div>
 </header>
 <section class="portfolio section-margin">
-  <div class="container">
+  <div class="container" *ngIf="!isSuccess">
     <div class="section-intro">
       <h4 class="section-intro__title"><b>Consultation</b></h4>
       <h2 class="section-intro__subtitle bottom-border">Request A Session</h2>
     </div>
+    <div>
+    <div style="color: red; padding-left: 20px; font-size: 25px;" *ngIf="!valid">* Please fill all the fields</div> <br>
+
     <div class="row align-items-end pb-md-5 mb-4" style="justify-content: space-between !important;">
       <div class="col-md-6 col-sm-12">
         <div>
-          <input type="string" placeholder="First Name">
+          <input type="string" placeholder="First Name" [(ngModel)]="firstname">
         </div>
       </div>
       <div class="col-md-6 col-sm-12 second-row" >
         <div>
-          <input type="string" placeholder="Last Name">
+          <input type="string" placeholder="Last Name" [(ngModel)]="lastname">
         </div>
       </div>
 </div>
 <div class="row align-items-end pb-md-5 mb-4" style="justify-content: space-between !important;">
   <div class="col-md-12">
     <div>
-      <input type="number" placeholder="Phone Number">
+      <input type="number" placeholder="Phone Number" [(ngModel)]="phonenumber">
     </div>
   </div>
 </div>
 <div class="row align-items-end pb-md-5 mb-4" style="justify-content: space-between !important;">
   <div class="col-md-12">
     <div>
-      <input type="string" placeholder="Email Address">
+      <input type="string" placeholder="Email Address" [(ngModel)]="email">
     </div>
   </div>
 </div>
 <div class="row align-items-end pb-md-5 mb-4" style="justify-content: space-between !important;">
   <div class="col-md-6">
     <div>
-      <select>
+      <select [(ngModel)]="modeofcontact">
         <option disabled selected>Preferred Mode Of Contact</option>
         <option value="Phone">Phone </option>
         <option value="Text">Text </option>
@@ -91,7 +94,7 @@
   </div>
   <div class="col-md-6 second-row">
     <div>
-      <input type="string" placeholder="Address">
+      <input type="string" placeholder="Address" [(ngModel)]="address">
     </div>
   </div>
 </div>
@@ -101,13 +104,22 @@
 <div style="width: 100%; display: flex; margin-top: 50px; padding-right: 10px; padding-left: 20px; align-items: center; justify-content: center;">
 <div>
   <div class="text-center pt-2">
-    <button class="btn btn--rightBorder  centerButton" >SUBMIT</button>
+    <button class="btn btn--rightBorder  centerButton" (click)="submit()" >SUBMIT</button>
   </div>
 </div>
 <div style="flex-grow: 1;">
 
 </div>
-
 </div>
+</div>
+</div>
+<div *ngIf="isSuccess">
+  <br>
+  <br>
+  <div style="width:  100%; text-align: center;">
+    <h3 style="color: rgb(83, 182, 83);">Thanks For Your Response. </h3>
+    <h5>We will contact you shortly</h5>
+    <a class="btn btn--rightBorder  btn--leftBorder  centerButton" routerLink="/">Home</a>
+  </div>
 </div>
 </section>

@@ -44,7 +44,13 @@ export class GalleryComponent implements OnInit, AfterViewInit{
     $( ".toggle_icon" ).on('click', function() {
       $( 'body' ).toggleClass( "open" );
     });
-
+    $(document).on('click',function (event) {
+      var clickover = $(event.target);
+      var _opened = $("body").hasClass("open");
+      if (_opened === true && !clickover.hasClass("side_menu") && !clickover.hasClass("Menu Bar") && !clickover.hasClass("toggle_icon")) {
+        $( 'body' ).removeClass("open");
+      }
+  });
 
 
   }

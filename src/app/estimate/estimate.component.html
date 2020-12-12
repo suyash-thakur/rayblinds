@@ -17,7 +17,7 @@
       <a routerLink="/smartBlinds">Smart Blinds</a>
     </li>
     <li>
-      <a routerLink="/quiz">Get Recommendation</a>
+      <a routerLink="/quiz">Product Recommendation</a>
     </li>
   </ul>
 </div>
@@ -49,46 +49,48 @@
 
 
 <section class="portfolio section-margin">
-  <div class="container">
+  <div class="container" >
     <div class="section-intro">
       <h4 class="section-intro__title"><b>COST ESTIMATE</b></h4>
       <h2 class="section-intro__subtitle bottom-border">Request A Quote</h2>
     </div>
+    <div *ngIf="!isSuccess">
+      <div style="color: red; padding-left: 20px; font-size: 25px;" *ngIf="!valid">* Please fill all the fields</div> <br>
     <div class="row align-items-end pb-md-5 mb-4" style="justify-content: space-between !important;">
       <div class="col-md-6 col-sm-12">
         <div>
-          <input type="string" placeholder="First Name">
+          <input type="string" placeholder="First Name" [(ngModel)]="firstname">
         </div>
       </div>
       <div class="col-md-6 col-sm-12 second-row" >
         <div>
-          <input type="string" placeholder="Last Name">
+          <input type="string" placeholder="Last Name" [(ngModel)]="secondname">
         </div>
       </div>
 </div>
 <div class="row align-items-end pb-md-5 mb-4" style="justify-content: space-between !important;">
   <div class="col-md-12">
     <div>
-      <input type="string" placeholder="Address Line 1">
+      <input type="string" placeholder="Address Line 1" [(ngModel)]="address">
     </div>
   </div>
 </div>
 <div class="row align-items-end pb-md-5 mb-4" style="justify-content: space-between !important;">
   <div class="col-md-12">
     <div>
-      <input type="string" placeholder="Address Line 2">
+      <input type="string" placeholder="Address Line 2" [(ngModel)]="address2">
     </div>
   </div>
 </div>
 <div class="row align-items-end pb-md-5 mb-4" style="justify-content: space-between !important;">
   <div class="col-md-6">
     <div>
-      <input type="number" placeholder="Phone Number">
+      <input type="number" placeholder="Phone Number" [(ngModel)]="phoneNo">
     </div>
   </div>
   <div class="col-md-6 second-row">
     <div>
-      <input type="email" placeholder="Email">
+      <input type="email" placeholder="Email" [(ngModel)]="email">
     </div>
   </div>
 </div>
@@ -112,15 +114,15 @@
     </tr>
     <tbody class="margin">
     <tr *ngFor="let item of estimateData">
-      <td><input type="string" class="tableInput"></td>
-      <td><input type="string" class="tableInput"></td>
+      <td><input type="string" class="tableInput" [(ngModel)]="item.room"></td>
+      <td><input type="string" class="tableInput" [(ngModel)]="item.quantity"></td>
       <td>
         <div style="display: flex;">
           <div>
-            <input type="number" class="tableInput">
+            <input type="number" class="tableInput" [(ngModel)]="item.width">
           </div>
           <div>
-          <select style="padding: 5px; margin-top: 10px;  font-size: 20px; border: 3px solid #4F4E56; padding-bottom: 10px;        ">
+          <select style="padding: 5px; margin-top: 10px;  font-size: 20px; border: 3px solid #4F4E56; padding-bottom: 10px;        " [(ngModel)]="item.widthf">
             <option value="0" selected>
               NA
             </option>
@@ -151,10 +153,10 @@
         </div></td>
       <td> <div style="display: flex;">
         <div>
-          <input type="number" class="tableInput">
+          <input type="number" class="tableInput"[(ngModel)]="item.height">
         </div>
         <div>
-        <select class="" style="padding: 5px; margin-top: 10px;  font-size: 20px; border: 3px solid #4F4E56; padding-bottom: 10px;        ">
+        <select class="" style="padding: 5px; margin-top: 10px;  font-size: 20px; border: 3px solid #4F4E56; padding-bottom: 10px;        " [(ngModel)]="item.heightf">
           <option value="0" selected>
             NA
           </option>
@@ -186,7 +188,7 @@
       </div>
       </div></td>
       <td>
-        <select class="tableInput">
+        <select class="tableInput" [(ngModel)]="item.typeOfBind">
           <option *ngFor="let item of products" [value] = 'item.name'> {{ item.name }}</option>
         </select>
       </td>
@@ -197,7 +199,7 @@
 <div style="width: 100%; display: flex; margin-top: 50px; padding-right: 10px; padding-left: 20px; align-items: center; justify-content: center;">
 <div>
   <div class="text-center pt-2">
-    <button class="btn btn--rightBorder  centerButton" >SUBMIT</button>
+    <button class="btn btn--rightBorder  centerButton" (click)="submit()">SUBMIT</button>
   </div>
 </div>
 <div style="flex-grow: 1;">
@@ -213,6 +215,16 @@
   </div>
 
 </div>
+</div>
+</div>
+<div *ngIf="isSuccess">
+  <br>
+  <br>
+  <div style="width:  100%; text-align: center;">
+    <h3 style="color: rgb(83, 182, 83);">Thanks For Your Response. </h3>
+    <h5>We will contact you shortly</h5>
+    <a class="btn btn--rightBorder  btn--leftBorder  centerButton" routerLink="/">Home</a>
+  </div>
 </div>
 </div>
 </section>

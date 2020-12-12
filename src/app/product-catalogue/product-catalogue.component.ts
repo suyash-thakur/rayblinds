@@ -8,10 +8,10 @@ import * as $ from 'jquery';
 })
 export class ProductCatalogueComponent implements OnInit, AfterViewInit {
   products: Array<any> = [
-    {id: 'VerticalBlind', name: 'Vertical Blind',  img : '../../assets/img/653/Vertical blinds.png'},
+    {id: 'VerticalBlind', name: 'Vertical Blinds',  img : '../../assets/img/653/Vertical blinds.png'},
     {id: 'FauxWoodBlinds' , name: 'Faux Wood Blinds',  img: '../../assets/img/653/Faux wood.png'},
      {id: 'AluminumBlinds', name: 'Aluminum Blinds',  img: '../../assets/img/653/Aluminium Blinds.png'},
-     {id: 'Zebrablinds', name: 'Zebra blinds',  img: '../../assets/img/653/Zebra Blinds.png'},
+     {id: 'Zebrablinds', name: 'Zebra Blinds',  img: '../../assets/img/653/Zebra Blinds.png'},
      {id: 'RollerBlinds', name: 'Roller Blinds',  img: '../../assets/img/653/Roller Blinds.png'},
      {id: 'RealWoodBlinds', name: 'Real Wood Blinds',  img: '../../assets/img/653/Real Wood Blinds.png'},
      {id: 'HoneycombBlinds', name: 'Honeycomb Blinds',  img: '../../assets/img/653/Honeycomb Blinds.png'},
@@ -38,7 +38,13 @@ export class ProductCatalogueComponent implements OnInit, AfterViewInit {
       $( 'body' ).toggleClass( "open" );
     });
 
-
+    $(document).on('click',function (event) {
+      var clickover = $(event.target);
+      var _opened = $("body").hasClass("open");
+      if (_opened === true && !clickover.hasClass("side_menu") && !clickover.hasClass("Menu Bar") && !clickover.hasClass("toggle_icon")) {
+        $( 'body' ).removeClass("open");
+      }
+  });
   }
   changeRoute(id) {
     this.router.navigate(['productDetails/' + id]);

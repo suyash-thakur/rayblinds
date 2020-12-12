@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { AfterViewInit } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
@@ -20,14 +21,24 @@ export class EstimateComponent implements OnInit, AfterViewInit {
      {id: 'ShangriLaBlinds', name: 'Shangri-La Blinds', content: 'Add an eastern touch to your house with elegant Shangri La Blinds made from lightweight top-tier sheer fabric. These modern horizontal shades are child-safe. You can raise them with the vanes open and close them fully or partially. Ray’s luxurious range of Shangri La Blinds is built from fine soft fabric that allows mild sunlight filtering to create an aesthetically pleasing and practically ambient home atmosphere while ensuring your privacy.', img: '../../assets/img/457/d.png'},
      {id: 'DayNightHoneycombBlinds', name: 'Day-Night Honeycomb Blinds', content: ' Block out the light, darken your rooms, and take a long peaceful nap or enjoy your day with mild natural sunlight + protection from harsh UV rays – own the luxury you deserve with Ray’s premium multifunctional Day-Night Honeycomb Blinds. These modern flexible cellular shades are environment-friendly cordless alternatives for when you need to switch between light filtering and room darkening. Custom-tailored with only the best fabrics for all your comfort and privacy needs!', img: '../../assets/img/457/Day Night Honeycomb Blinds.png'},
   ];
+  firstname: String = "";
+  secondname: String = "";
+  address: String = "";
+  address2: String = "";
+  phoneNo: String = "";
+  email: String = "";
+  isSuccess = false;
+  valid = true;
   estimateData: Array<any> = [{
     room: '',
     quantity: '',
     width: '',
+    widthf: '',
     height: '',
+    heightf: '',
     typeOfBind: ''
   }];
-  constructor() { }
+  constructor(private http: HttpClient, ) { }
 
   ngOnInit(): void {
     $( 'body' ).removeClass('open');
@@ -44,7 +55,13 @@ export class EstimateComponent implements OnInit, AfterViewInit {
       $( 'body' ).toggleClass( "open" );
     });
 
-
+    $(document).on('click',function (event) {
+      var clickover = $(event.target);
+      var _opened = $("body").hasClass("open");
+      if (_opened === true && !clickover.hasClass("side_menu") && !clickover.hasClass("Menu Bar") && !clickover.hasClass("toggle_icon")) {
+        $( 'body' ).removeClass("open");
+      }
+  });
 
   }
   addRoom() {
@@ -52,13 +69,32 @@ export class EstimateComponent implements OnInit, AfterViewInit {
       room: '',
     quantity: '',
     width: '',
+    widthf: '',
     height: '',
+    heightf: '',
     typeOfBind: ''
     });
   }
   removeRoom( ) {
     if (this.estimateData.length > 1) {
       this.estimateData.pop();
+    }
+  }
+  submit(): void {
+    const Blind = ({
+      firstname: this.firstname,
+      secondname: this.secondname,
+      address: this.address,
+      address2: this.address2,
+      phone: this.phoneNo,
+      email: this.email,
+      estimateData: this.estimateData
+    });
+    console.log(Blind);
+    if(this.firstname !== '' || this.secondname !== '' || this.address !== '' || this.address2 !== '' || this.phoneNo !== '' || this.email !== '') {
+      this.http.post('http://localhost:3000/emailCost', Blind).subscribe(responce => {this.isSuccess = true}, err => {console.log(err)});
+    } else {
+      this.valid = false;
     }
   }
 }
