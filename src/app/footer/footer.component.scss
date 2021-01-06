@@ -1,23 +1,49 @@
-
-
 img {
   width: 40px;
 }
 .email {
   font-size: 25px;
 }
+.foot-cont {
+  display: flex;
+  justify-content: flex-end;
+}
+.right-cont {
+  color: white !important;
+  text-align: right;
+  flex: 1;
+}
+.icon-cont {
+  display: flex;
+  justify-content: flex-end;
+}
 @media screen and (max-width: 740px) {
   h1 {
-    font-size: 18px;
+    font-size: 25px;
   }
   h3 {
-    font-size: 12px;
+    font-size: 15px;
   }
   img {
     width: 35px;
   }
   .email {
-    font-size: 12px;
+    font-size: 15px;
   }
-
+  .foot-cont {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .right-cont {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .left-cont {
+    text-align: center;
+  }
+  .icon-cont {
+    display: flex;
+    justify-content: center;
+  }
 }

@@ -29,6 +29,7 @@ export class EstimateComponent implements OnInit, AfterViewInit {
   email: String = "";
   isSuccess = false;
   valid = true;
+  isClicked = false;
   estimateData: Array<any> = [{
     room: '',
     quantity: '',
@@ -81,6 +82,7 @@ export class EstimateComponent implements OnInit, AfterViewInit {
     }
   }
   submit(): void {
+    this.isClicked = true;
     const Blind = ({
       firstname: this.firstname,
       secondname: this.secondname,
@@ -92,9 +94,11 @@ export class EstimateComponent implements OnInit, AfterViewInit {
     });
     console.log(Blind);
     if(this.firstname !== '' || this.secondname !== '' || this.address !== '' || this.address2 !== '' || this.phoneNo !== '' || this.email !== '') {
-      this.http.post('http://localhost:3000/emailCost', Blind).subscribe(responce => {this.isSuccess = true}, err => {console.log(err)});
+      this.http.post('https://protected-journey-92830.herokuapp.com/emailCost', Blind).subscribe(responce => { this.isSuccess = true; this.isClicked = false; }, err => {console.log(err)});
     } else {
       this.valid = false;
+      this.isClicked = false;
+
     }
   }
 }

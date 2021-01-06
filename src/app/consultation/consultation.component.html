@@ -46,7 +46,7 @@
   </div>
 </header>
 <section class="portfolio section-margin">
-  <div class="container" *ngIf="!isSuccess">
+  <div class="container" *ngIf="!isSuccess && !isClicked">
     <div class="section-intro">
       <h4 class="section-intro__title"><b>Consultation</b></h4>
       <h2 class="section-intro__subtitle bottom-border">Request A Session</h2>
@@ -104,7 +104,7 @@
 <div style="width: 100%; display: flex; margin-top: 50px; padding-right: 10px; padding-left: 20px; align-items: center; justify-content: center;">
 <div>
   <div class="text-center pt-2">
-    <button class="btn btn--rightBorder  centerButton" (click)="submit()" >SUBMIT</button>
+    <button class="btn btn--rightBorder  centerButton" (click)="submit()" [disabled]="isClicked">SUBMIT</button>
   </div>
 </div>
 <div style="flex-grow: 1;">
@@ -113,6 +113,7 @@
 </div>
 </div>
 </div>
+<app-loader *ngIf="isClicked"></app-loader>
 <div *ngIf="isSuccess">
   <br>
   <br>

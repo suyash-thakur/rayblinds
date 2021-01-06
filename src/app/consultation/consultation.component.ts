@@ -15,6 +15,7 @@ export class ConsultationComponent implements OnInit {
   address = "";
   isSuccess = false;
   valid = true;
+  isClicked = false;
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -41,6 +42,7 @@ export class ConsultationComponent implements OnInit {
   }
 
   submit(): void {
+    this.isClicked = true;
     const Data = ({
       name: this.firstname + " " + this.lastname,
       phone: this.phonenumber,
@@ -49,9 +51,11 @@ export class ConsultationComponent implements OnInit {
       address: this.address
     });
     if(this.firstname !== '' || this.lastname !== '' || this.address !== '' ||  this.phonenumber !== '' || this.email !== '') {
-      this.http.post('http://localhost:3000/emailSession', Data).subscribe(responce => {this.isSuccess = true}, err => {console.log(err)});
+      this.http.post('https://protected-journey-92830.herokuapp.com/emailSession', Data).subscribe(responce => { this.isSuccess = true; this.isClicked = false; }, err => { console.log(err) });
+
     } else {
       this.valid = false;
+      this.isClicked = false;
     }
   }
 }

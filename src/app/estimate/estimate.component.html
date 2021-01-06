@@ -54,7 +54,7 @@
       <h4 class="section-intro__title"><b>COST ESTIMATE</b></h4>
       <h2 class="section-intro__subtitle bottom-border">Request A Quote</h2>
     </div>
-    <div *ngIf="!isSuccess">
+    <div *ngIf="!isSuccess && !isClicked">
       <div style="color: red; padding-left: 20px; font-size: 25px;" *ngIf="!valid">* Please fill all the fields</div> <br>
     <div class="row align-items-end pb-md-5 mb-4" style="justify-content: space-between !important;">
       <div class="col-md-6 col-sm-12">
@@ -199,7 +199,7 @@
 <div style="width: 100%; display: flex; margin-top: 50px; padding-right: 10px; padding-left: 20px; align-items: center; justify-content: center;">
 <div>
   <div class="text-center pt-2">
-    <button class="btn btn--rightBorder  centerButton" (click)="submit()">SUBMIT</button>
+    <button class="btn btn--rightBorder  centerButton" (click)="submit()" [disabled]= 'isClicked'>SUBMIT</button>
   </div>
 </div>
 <div style="flex-grow: 1;">
@@ -217,6 +217,8 @@
 </div>
 </div>
 </div>
+<app-loader *ngIf="isClicked"></app-loader>
+
 <div *ngIf="isSuccess">
   <br>
   <br>
