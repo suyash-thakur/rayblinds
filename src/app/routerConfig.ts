@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { AutomaticComponent } from './automatic/automatic.component';
+import { CatalogueComponent } from './catalogue/catalogue.component';
 import { ConsultationComponent } from './consultation/consultation.component';
 import { EstimateComponent } from './estimate/estimate.component';
 import { GalleryComponent } from './gallery/gallery.component';
@@ -36,6 +37,9 @@ const appRoutes: Routes = [
   },
   {
     path: 'smartBlinds', component: SmartBlindsComponent
+  },
+  {
+    path: 'catalog', component: CatalogueComponent
   }
 ];
 

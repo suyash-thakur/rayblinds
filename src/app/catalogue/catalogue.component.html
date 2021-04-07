@@ -1,0 +1,84 @@
+<div class="side_menu">
+  <ul class="list menu_right">
+    <li>
+      <a routerLink="/">Home</a>
+    </li>
+    <li>
+      <a routerLink="/products">Products</a>
+    </li>
+    <li>
+      <a routerLink="/estimate">Estimate</a>
+    </li>
+    <li>
+      <a routerLink="/automation">Automation</a>
+    </li>
+    <li>
+      <a routerLink="/smartBlinds">Smart Blinds</a>
+    </li>
+    <li>
+      <a routerLink="/catalog">Catalog</a>
+    </li>
+    <li>
+      <a routerLink="/quiz">Product Recommendation</a>
+    </li>
+  </ul>
+</div>
+<!--================End Offcanvus Menu Area =================-->
+
+<!--================Canvus Menu Area =================-->
+<div class="canvus_menu">
+  <div class="container">
+    <div class="float-right">
+      <div class="toggle_icon" title="Menu Bar">
+        <span></span>
+      </div>
+    </div>
+  </div>
+</div>
+<header class="hero-banner project-bg">
+  <a class="navbar-brand" routerLink="/" style="z-index: 500000 !important;">
+    <img src="../../assets/img/logo.png" alt="">
+  </a>
+
+  <div class="container">
+    <h2 class="section-intro__subtitle" style="color: white !important;">Cost Estimate</h2>
+    <div class="btn-group breadcrumb">
+      <a routerLink="/" class="btn">Home</a>
+      <span class="btn ">Catalog</span>
+    </div>
+  </div>
+</header>
+<section class="portfolio section-margin">
+  <div class="container">
+    <div class="section-intro">
+      <h4 class="section-intro__title"><b>Catalog</b></h4>
+      <h2 class="section-intro__subtitle bottom-border"></h2>
+    </div>
+    <div class="row  " style="justify-content: space-between !important; " *ngFor="let item of catalogue">
+      <div class="mb-5 pt-2 col-md-12 col-xs-12">
+        <p style="font-size: 30px; font-weight: bold; margin-bottom: 0px; color: #4F4E56">{{ item.name }}</p>
+      </div>
+      <div *ngFor="let img of item.image" class="col-md-6 col-xs-12 mb-5" style="position:relative; cursor: pointer;">
+        <img [src]="img" style="max-width: 600px; width:100%; height: auto; position:relative; top: 0;
+        left: 0;" (click)="selectImg(img)" id="btnTest">
+        <img src="../../assets/img/logo.png" style="max-width: 50px; width:100%; position: absolute; bottom: 0px; left: 30px; right:0px; margin-left: auto;
+          margin-right: auto;">
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<div class="modal fade" tabindex="-1" role="dialog" id="exampleModal">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div style="position:relative;">
+        <img [src]="selectedImg" style="max-width: 1200px; width:100%; height: auto; position:relative; top: 0;
+        left: 0;">
+        <img src="../../assets/img/logo.png" style="max-width: 50px; width:100%; position: absolute; bottom: 0px; left: 30px; right:0px; margin-left: auto;
+          margin-right: auto;">
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -18,6 +18,8 @@ import { SmartBlindsComponent } from './smart-blinds/smart-blinds.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from './loader/loader.component';
+import { CatalogueComponent } from './catalogue/catalogue.component';
+import * as bootstrap from "bootstrap";
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,8 @@ import { LoaderComponent } from './loader/loader.component';
     ConsultationComponent,
     QuizComponent,
     SmartBlindsComponent,
-    LoaderComponent
+    LoaderComponent,
+    CatalogueComponent
   ],
   imports: [
     BrowserModule,
