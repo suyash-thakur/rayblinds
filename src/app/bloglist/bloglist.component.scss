@@ -1,0 +1,58 @@
+.icon-1 {
+  height: 65px;
+}
+.btn-mobile {
+  display: none;
+}
+.icon-3 {
+  height: 45px;
+}
+.icon-2 {
+  height: 55px;
+}
+.description {
+  font-size: 1.2rem;
+}
+.portfolio__img {
+  max-width: 600px !important;
+}
+.mobImg {
+  display: none;
+}
+@media screen and (max-width: 740px) {
+ .section-intro__subtitle.small {
+   text-align: center;
+ }
+ .section-intro__subtitle {
+   font-size: 32px;
+ }
+ .description  {
+   text-align: center;
+ }
+ .section-project {
+  align-items: center !important;
+  justify-content: center;
+ }
+ .btn  {
+   text-align: center;
+ }
+ .btn-mobile {
+   display: inline-block;
+ }
+ .btn-web {
+   display: none;
+ }
+ .car-item {
+   display: none;
+ }
+ .test-img {
+   width: 55px;
+ }
+ .mobImg {
+  display: block;
+}
+.deskImg {
+  display: none;
+}
+}
+

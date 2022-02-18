@@ -20,6 +20,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from './loader/loader.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import * as bootstrap from "bootstrap";
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { BlogOneComponent } from './blog-one/blog-one.component';
+import { BloglistComponent } from './bloglist/bloglist.component';
+import { BlogTwoComponent } from './blog-two/blog-two.component';
+import { BlogThreeComponent } from './blog-three/blog-three.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +39,12 @@ import * as bootstrap from "bootstrap";
     QuizComponent,
     SmartBlindsComponent,
     LoaderComponent,
-    CatalogueComponent
+    CatalogueComponent,
+    PrivacyPolicyComponent,
+    BlogOneComponent,
+    BloglistComponent,
+    BlogTwoComponent,
+    BlogThreeComponent
   ],
   imports: [
     BrowserModule,
